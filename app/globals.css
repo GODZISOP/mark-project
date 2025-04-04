@@ -1,26 +1,1681 @@
-@import "tailwindcss";
+/* Ocean and Nature Theme */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Navbar Styles */
+body {
+  margin: 0;
+  padding: 0;
 }
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.wrapper {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.navbar {
+  background: linear-gradient(135deg, #00b0ff, #009688); /* Ocean blue to green gradient */
+  color: white;
+  padding: 15px 25px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a soft shadow for depth */
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #ffeb3b;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+}
+
+.bar {
+  width: 100%;
+  height: 4px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Drawer Styles (for mobile) */
+.drawer {
+  position: fixed;  /* Changed to fixed for better control */
+  top: 0;
+  right: -100%;  /* Start offscreen */
+  height: 100vh;
+  width: 70%;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #00b0ff, #009688); /* Ocean blue to green gradient */
+
+  box-shadow: -3px 0px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out; /* Added transition for smooth sliding */
+  display: none;  /* Drawer is hidden by default */
+}
+
+.drawer.open {
+  display: block; /* Show drawer */
+  transform: translateX(-100%);  /* Slide in from the right */
+}
+
+.drawer .navbar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Cancel Button */
+.cancel-btn {
+  background-color: #ff3333; /* Red background */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+.cancel-btn:hover {
+  background-color: #ff6666; /* Lighter red on hover */
+}
+
+
+
+/* navbar enidming */
+
+
+
+
+/* Content Styles */
+.content {
+  background-image: url('https://example.com/ocean-image.jpg'); /* Ocean-themed background image */
+  background-size: cover;
+  background-position: center;
+  padding: 10vh 1vw; /* Vertical padding in vh, horizontal padding in vw */
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  color: #fff; /* White text for readability */
+}
+
+.content h2 {
+  font-size: 6vw; /* Font size based on viewport width */
+  margin-bottom: 3vh; /* Margin based on viewport height */
+  font-family: 'Lucida Sans', sans-serif;
+  color: #ffffff; /* White text for clarity */
+}
+
+.content p {
+  font-size: 3vw; /* Font size based on viewport width */
+  color: #f1f1f1; /* Light text color for the paragraph */
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+/* Add a subtle, nature-inspired effect to buttons or other links */
+button, .btn {
+  padding: 1vw 2vw;
+  background-color: linear-gradient(135deg, #00b0ff, #009688);
+  color: white;
+  border: none;
+  font-size: 2vw;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  background-color: linear-gradient(135deg, #00b0ff, #009688);
+  transform: scale(1.05);
+}
+#navbar-link {
+  font-size: 1vw; /* Font size based on viewport width */
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  background-color:linear-gradient(135deg, #00b0ff, #009688);
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 0.7vw 1vw; /* Padding around the link */
+  border-radius: 5px; /* Rounded corners */
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for navbar link */
+#navbar-link:hover {
+  background-color: linear-gradient(135deg, #00b0ff, #009688);
+  color: #006379; /* Change text color on hover */
+  transform: translateY(-1vh); /* Subtle upward movement using vh */
+
+}
+.card-container {
+  width: 28vw;
+  height: 33vw;
+
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(242, 220, 220, 0.1);
+  background: white;
+  padding-bottom: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+/* Different hover colors for each card */
+/* Hover glow effect */
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 20px 5px rgba(0, 255, 255, 0.6); /* Glowing cyan effect */
+}
+.card-container:hover .card-title,
+.card-container:hover .card-category,
+.card-container:hover .card-description {
+  color: white; /* Ensure text remains readable */
+}
+
+
+.cardwrapper .card-container:nth-child(4) {
+  width: 25vw;
+  display: flex;
+  background: white;
+
+  justify-content: center;
+}
+
+.cardwrapper .card-container:nth-child(4) .card-content {
+  text-align: center;
+}
+.card-container:nth-child(1):hover {
+  background-color: #f5f7f4; /* Light green */
+}
+
+.card-container:nth-child(2):hover {
+  background-color: #77B5FE; /* Light blue */
+}
+
+.card-container:nth-child(3):hover {
+  background-color: #F4A261; /* Warm orange */
+}
+
+.card-container:nth-child(4):hover {
+  background-color: #E9C46A; /* Soft yellow */
+}
+
+.cardwrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Adjust spacing */
+  padding: 0 tuivw;
+}
+
+.card-image {
+  width: 100%;
+  height: 30vh;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+.card-content {
+  padding: 16px;
+  
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  text-align: center;
+}
+
+.card-category {
+  font-size: 14px;
+  font-weight: bold;
+  color: linear-gradient(135deg, #00b0ff, #009688);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.card-title {
+  font-size: 5vh;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.card-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+  font-style: italic;
+}
+.displayflex{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Container */
+.container {
+  display: flex;
+justify-content: space-Around;
+  align-items: center;
+  background-color: #f4f7fc;
+  min-height: 90vh;
+  padding: 20px;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  color: #1a202c;
+}
+
+.header h2 {
+  font-size: 2vw;
+  font-family:sans-serif;
+
+  height: 4vh;
+  font-weight: bold;
+}
+
+.header p {
+width: 40vw;
+margin: 1.5vh 5vw;
+  font-size: 1vw;
+  color: #718096;
+  font-family:sans-serif;
+}
+
+/* Image Section */
+.image-container {
+  margin: 20px 0;
+}
+
+.main-image {
+  width: 40vh; /* Ensure it's a perfect square */
+  height: 40vh;
+  border-radius: 50%; /* Makes it a perfect circle */
+  object-fit: cover; /* Ensures the image fills the round container properly */
+  box-shadow: 6px 4px 10px rgb(24, 209, 255), 0 0 30px rgb(52, 208, 255); /* More intense glow on hover */
+
+
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth animation */
+}
+
+/* Optional: Add a hover effect for an enhanced glow */
+.main-image:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 6px 4px 10px linear-gradient(135deg, #00b0ff, #009688);; /* More intense glow on hover */
+}
+
+
+/* Booking Section */
+.booking-section {
+  text-align: center;
+  background: hsl(222, 28%, 93%);
+  padding: 15px;
+  margin: 5vh;
+  border-radius: 10px;
+  box-shadow: 8px 7px 8px rgba(0, 0, 0, 0.1);
+
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 4px 15px rgba(66, 153, 225, 0.5), 0px 0px 20px rgba(66, 153, 225, 0.3);
+}
+
+/* Booking Section 1 */
+.booking-section1 {
+  text-align: center;
+  background: hsl(222, 28%, 93%);
+  padding: 15px;
+
+  border-radius: 10px;
+  box-shadow: 8px 7px 8px rgba(0, 0, 0, 0.1);
+  width: 50vw;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.booking-section1:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(66, 153, 225, 0.5), 0px 0px 20px rgba(66, 153, 225, 0.3);
+}
+
+
+.button {
+  background: dodgerblue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  font-size: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background: #6d9eff;
+  color: rgb(0, 0, 0);
+
+}
+
+/* Footer Links */
+.footer-links {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.footer-links a {
+  color: #2b6cb0;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+#hellomoto{
+  margin-left: 20px;
+}
+
+
+
+
+
+/* article starting from */
+.article-cards-container {
+  display: flex;              /* Arrange the article cards in a row */
+  flex-wrap: wrap;            /* Allow cards to wrap on smaller screens */
+  gap: 20px;      
+  justify-content: flex-start; /* Align articles to the left */
+  padding: 20px;              /* Add padding to the container */
+}
+
+/* Each article container */
+.article-container {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Hover effect to enlarge the article */
+.article-container:hover {
+  transform: scale(1.05);
+}
+
+/* Article body styling */
+.article-body {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for article body */
+.article-container:hover .article-body {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.article-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Article content styling */
+.article-content {
+  padding: 20px;
+}
+
+.article-posted-date {
+  font-size: 14px;
+  color: #888; /* Light gray for the posted date */
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.article-category {
+  color: #6b8e23; /* Green color for category */
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.article-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.article-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.PAGEWRAPPER{
+  display: flex;
+  justify-content: space-around;
+}
+/* Style for the article title */
+#artcletitle {
+  font-size: 2.5rem;           /* Size of the font */
+  font-weight: bold;           /* Make the title bold */
+  color: #2c3e50;              /* Dark grey color for text */
+  text-align: center;          /* Center align the heading */
+  margin: 20px 0;              /* Space above and below the title */
+  padding: 10px;               /* Padding inside the heading */
+  text-transform: capitalize;  /* Capitalize the first letter of each word */
+  font-family: 'Arial', sans-serif; /* Font family */
+  letter-spacing: 1px;         /* Slight spacing between letters */
+  background: linear-gradient(90deg, #3498db, #2ecc71); /* Gradient background */
+  color: white;                /* Text color */
+  border-radius: 5px;          /* Slight rounded corners */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+}
+
+#artcletitle:hover {
+  background: linear-gradient(90deg, #1abc9c, #9b59b6); /* Hover effect with different gradient */
+  cursor: pointer;            /* Change cursor to pointer on hover */
+  transform: scale(1.05);      /* Slight zoom effect on hover */
+  transition: transform 0.3s, background 0.3s; /* Smooth transition */
+}
+
+
+/* ending  */
+
+
+
+
+
+
+/* counter start */
+.stats-container {
+  display: flex;
+  margin: 10vh;
+  justify-content: space-around;
+  padding: 40px;
+  background: hsl(0, 0%, 98%);
+
+}
+
+.counter-box {
+  text-align: center;
+  padding: 20px;
+}
+
+.counter-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.counter-title {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+.counter-subtitle {
+  color: #666;
+  font-size: 1rem;
+}
+
+/* counter end */
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Page Container */
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styles */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Date Posted */
+.page-posted {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+/* Image Styling */
+.image-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.page-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Description Styles */
+.page-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Page ID Styling */
+.page-id {
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+  margin-top: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+}
+/* Wrapper for the horizontal scroll section */
+/* Wrapper for the horizontal scroll section */
+.horizontal-scroll-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden; /* Prevent scrollbar from appearing on the wrapper */
+}
+
+/* Scrollable container for the cards */
+.scrolling-container {
+  display: flex;
+  overflow-x: hidden;  /* Prevent scrolling outside of the container */
+  scroll-behavior: smooth; /* Smooth scroll transition */
+  flex-wrap: nowrap;  /* Prevent wrapping */
+  justify-content: flex-start; /* Align the content to the left */
+  width: 90%; /* Take up 90% of the container width for better spacing */
+  max-width: 1200px; /* Optional: Add a max-width to avoid overly stretched containers on large screens */
+  padding: 10px 0; /* Padding for top/bottom for visual balance */
+  gap: 20px; /* Space between the cards */
+  transition: transform 0.3s ease-in-out; /* Smooth transform transition */
+}
+
+/* Hide the scrollbar for a cleaner look */
+.scrolling-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Styling for each article card */
+.article-container {
+  flex-shrink: 0; /* Prevent the cards from shrinking */
+  width: 100%; /* Each card takes the full width of the container */
+  max-width: 500px; /* Limit card width for a more structured design */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff; /* White background for each card */
+  border-radius: 8px; /* Slight rounding of the card corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for cards */
+  transition: transform 0.3s ease; /* Smooth transformation */
+}
+
+/* Hover effect for cards */
+.article-container:hover {
+  transform: translateY(-10px); /* Slight lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
+}
+
+/* Scroll buttons */
+.scroll-button {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  font-size: 30px;
+  padding: 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Left button */
+.scroll-button.left {
+  left: 20px;
+}
+
+/* Right button */
+.scroll-button.right {
+  right: 20px;
+}
+
+/* Hover effects for scroll buttons */
+.scroll-button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-50%) scale(1.15); /* Slight scaling effect */
+}
+
+/* Active state for scroll buttons */
+.scroll-button:active {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1); /* Slight scaling effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow on active */
+}
+
+
+.caption {
+  font-family: 'Arial', sans-serif;
+  font-size: 2vw;
+  color: #333;
+  text-align: center;
+  margin: 30px auto;
+  line-height: 1.4;
+  max-width: 100vw;
+  padding: 20px;
+  background: linear-gradient(135deg, #00b0ff, #23d3c2); /* Ocean blue to green gradient */
+
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.caption .highlight {
+  font-weight: bold;
+  color: #ffeb3b;
+  font-size: 2vw;
+  display: block;
+  margin-top: 10px;
+}
+
+.caption:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #00b0ff, #009688); /* Ocean blue to green gradient */
+
+
+  transition: transform 0.3s ease;
+}
+
+
+
+/* Global Styles */
+.dashboard-content {
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-section h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.header-section p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+}
+
+.main-content {
+  display: flex;              /* Display the sections in a row */
+  flex-direction: row;        /* Align items horizontally */
+  justify-content: space-between; /* Space out the sections */
+  gap: 40px;                  /* Add space between the graph and details sections */
+  margin-top: 40px;
+}
+
+.graph-container {
+  flex: 1;                    /* Allow this section to grow and take space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graph-placeholder {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.graph-image {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.client-details {
+  flex: 1;                    /* Allow this section to grow and take space */
+  background-color: #f9f9f9;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.client-details h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #34495e;
+}
+
+.client-details p {
+  font-size: 1.1rem;
+  color: #2c3e50;
+}
+
+.progress-metric {
+  margin-bottom: 20px;
+}
+
+.progress-metric h3 {
+  font-size: 1.5rem;
+  color: #2980b9;
+}
+
+.progress-metric p {
+  font-size: 1.1rem;
+}
+
+.insights-container {
+  margin-top: 30px;
+}
+
+.insights-container h3 {
+  font-size: 1.5rem;
+  color: #27ae60;
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  background-color: #3498db;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+}
+
+.contact-container {
+  padding: 40px;
+  background-color: #f4f4f9;
+  border-radius: 8px;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contact-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.contact-header p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: left;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 150px;
+}
+
+.submit-btn {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-btn:disabled {
+  background-color: #ddd;
+}
+
+.confirmation-message {
+  margin-top: 20px;
+  color: green;
+  font-weight: bold;
+}
+
+.social-icons {
+  margin-top: 30px;
+}
+
+.social-icons a {
+  margin: 0 15px;
+  color: #0b07dd;
+}
+
+.social-icons a:hover {
+  color: #007bff;
+}
+
+/* styles/footer.module.css */
+
+/* Base Footer Styles */
+/* styles/global.css */
+.footer {
+  background-color: #282c34;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer-brand h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.footer-brand p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.footer-links a:hover {
+  color: #0073e6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.footer-social a:hover {
+  color: #0073e6;
+}
+
+/* Responsive Adjustments */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 568px) {
+  /* Hide Navbar Links on smaller screens */
+  .navbar-links {
+    display: none;
+  }
+
+  /* Show Hamburger Icon on Mobile */
+  .hamburger-icon {
+    display: flex;
+  }
+
+  /* Show Navbar Links when Drawer is open */
+  .navbar-links.active {
+    display: grid;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Mobile Drawer Menu - hidden by default */
+  .drawer {
+    display: none;
+  }
+  .image-container {
+    margin: 20px 0;
+  }
+  
+  .main-image {
+    width:30vh; /* Ensure it's a perfect square */
+    height: 30vh;
+    margin: 0vh 0vw;
+    border-radius: 50%; /* Makes it a perfect circle */
+    object-fit: cover; /* Ensures the image fills the round container properly */
+    box-shadow: 6px 4px 10px rgb(24, 209, 255), 0 0 30px rgb(52, 208, 255); /* More intense glow on hover */
+  
+  
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth animation */
+  }
+  
+  /* Optional: Add a hover effect for an enhanced glow */
+  .main-image:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 6px 4px 10px linear-gradient(135deg, #00b0ff, #009688);; /* More intense glow on hover */
+  }
+  
+  
+  /* Booking Section */
+  .booking-section {
+    width: 80vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 4vh 2vw;
+    padding: 5vh 0;
+  }
+  
+  .booking-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(66, 153, 225, 0.5), 0px 0px 20px rgba(66, 153, 225, 0.3);
+  }
+  
+  /* Booking Section 1 */
+  .booking-section1 {
+    width:80vw;
+    height: 60vh;
+
+margin: 0 2vw;
+padding: 5vh 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .booking-section1 p{
+    font-size: 4vw;
+    width: 60vw;
+
+  }
+  .booking-section1 h2{
+    font-size: 6vw;
+    width: 100vw;
+
+  }
+  .typing-effect{
+    font-size: 5vw;
+
+  }
+  
+  
+  .booking-section1:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(66, 153, 225, 0.5), 0px 0px 20px rgba(66, 153, 225, 0.3);
+  }
+  .container{
+    display: grid;
+  }
+  
+  
+  .button {
+    background: dodgerblue;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .button:hover {
+    background: #6d9eff;
+    color: rgb(0, 0, 0);
+  
+  }
+  
+  /* Footer Links */
+  .footer-links {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .footer-links a {
+    color: #2b6cb0;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline;
+  }
+  
+  #hellomoto{
+    margin-left: 20px;
+  }
+  
+  .stats-container {
+    display: flex;
+    justify-content:center;
+align-items: center;
+width: 80vw;
+
+margin: 0 8vw;
+color: rgb(135, 135, 135);
+padding: 1vh  8vw;
+height: 40vh;
+  }
+  
+  .counter-box {
+    text-align: center;
+    margin: 0 0 ;
+    padding: 20px;
+  }
+  
+  .counter-number {
+    font-size: 10vw; /* Increased font size for impact */
+    font-weight: 700;  /* Stronger font weight */
+    color: #333;  /* Darker color for better readability */
+    letter-spacing: 2px;  /* Added spacing between numbers for a modern look */
+  }
+  
+  .counter-title {
+    font-size: 4vw;
+    margin-top: 10px;
+  }
+  
+  .counter-subtitle {
+    color: #666;
+    font-size: 3.5vw;
+    width: 0vw;
+  }
+  
+  .card-container {
+    width: 80vw;
+    height: 60vh;
+
+  
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(242, 220, 220, 0.1);
+    background: white;
+    padding-bottom: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  
+
+
+/* Different hover colors for each card */
+/* Hover glow effect */
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 0px 20px 5px rgba(0, 255, 255, 0.6); /* Glowing cyan effect */
+}
+.card-container:hover .card-title,
+.card-container:hover .card-category,
+.card-container:hover .card-description {
+    color: white; /* Ensure text remains readable */
+  }
+  
+  
+  .cardwrapper .card-container:nth-child(4) {
+    width: 80vw;
+    height: 60vh;
+
+  
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(242, 220, 220, 0.1);
+    background: white;
+    padding-bottom: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .cardwrapper .card-container:nth-child(4) .card-content {
+    text-align: center;
+  }
+  card-container:nth-child(1):hover {
+    background-color: #f5f7f4; /* Light green */
+  }
+  
+  .card-container:nth-child(2):hover {
+    background-color: #77B5FE; /* Light blue */
+  }
+  
+  .cardwrapper{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+  }
+  .card-container:nth-child(3):hover {
+    background-color: #F4A261; /* Warm orange */
+  }
+  
+  .card-container:nth-child(4):hover {
+    background-color: #E9C46A; /* Soft yellow */
+  }
+  
+  
+  .card-image {
+    width: 100%;
+    height: 30vh;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  .card-content {
+    padding: 16px;
+    
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+  }
+  
+  .card-category {
+    font-size: 14px;
+    font-weight: bold;
+    color: linear-gradient(135deg, #00b0ff, #009688);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  
+  .card-title {
+    font-size: 5vw;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .card-description {
+    font-size: 3vw;
+    color: #666;
+    line-height: 1.5;
+    font-style: italic;
+  }
+  .displayflex{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  
+  
+  
+  .article-cards-container {
+    display: flex;    
+    /* Arrange the article cards in a row */
+    flex-wrap: wrap;            /* Allow cards to wrap on smaller screens */
+    gap: 20px;      
+    
+    padding: 20px;              /* Add padding to the container */
+    justify-content: flex-start; /* Align articles to the left */
+  }
+  
+  /* Each article container */
+  .article-container {
+    margin: 3vh;
+    margin: 0 2vw;
+    /* Fixed width for each article */
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  /* Hover effect to enlarge the article */
+  .article-container:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Article body styling */
+  .article-body {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Hover effect for article body */
+  .article-container:hover .article-body {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Image styling */
+  .article-image {
+    width: 100%;
+    margin: 0 0vw;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #e0e0e0;
+  }
+  
+  /* Article content styling */
+  .article-content {
+    padding: 20px;
+  }
+  
+  .article-posted-date {
+    font-size: 3vw;
+    color: #888; /* Light gray for the posted date */
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+  
+  .article-category {
+    color: #6b8e23; /* Green color for category */
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  
+  .article-title {
+    font-size: 3.3vw;
+    margin-left: 15vw;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .article-description {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .PAGEWRAPPER{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+align-items: center;
+  }
+  #artcletitle{
+font-size:3vh;
+  }
+  .typing-effect{
+    margin: 0 0;
+    font-size: 3vw;
+  }
+  .navbar-title{
+    font-size: 4vw;
+
+  }
+  .horizontal-scroll-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    padding: 20px 0;
+    overflow: hidden; /* Prevent scrollbar from appearing on the wrapper */
+  }
+  
+  /* Scrollable container for the cards */
+  .scrolling-container {
+    display: flex;
+    overflow-x: hidden;  /* Prevent scrolling outside of the container */
+    scroll-behavior: smooth; /* Smooth scroll transition */
+    flex-wrap: nowrap;  /* Prevent wrapping */
+    justify-content: flex-start; /* Align the content to the left */
+    width: 80%; /* Take up 90% of the container width for better spacing */
+    padding: 10px 0; /* Padding for top/bottom for visual balance */
+    gap: 20px; /* Space between the cards */
+    transition: transform 0.3s ease-in-out; /* Smooth transform transition */
+  }
+  
+  /* Hide the scrollbar for a cleaner look */
+  .scrolling-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Styling for each article card */
+  .article-container {
+    flex-shrink: 0; /* Prevent the cards from shrinking */
+    width: 90%; /* Each card takes the full width of the container */
+    max-width: 100vw; /* Limit card width for a more structured design */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; /* White background for each card */
+    border-radius: 8px; /* Slight rounding of the card corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for cards */
+    transition: transform 0.3s ease; /* Smooth transformation */
+  }
+  
+  /* Hover effect for cards */
+  .article-container:hover {
+   
+  }
+  
+  /* Scroll buttons */
+  .scroll-button {
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Left button */
+  .scroll-button.left {
+    left: 20px;
+  }
+  
+  /* Right button */
+  .scroll-button.right {
+    right: 20px;
+  }
+  
+  /* Hover effects for scroll buttons */
+  .scroll-button:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%) scale(1.15); /* Slight scaling effect */
+  }
+  
+  /* Active state for scroll buttons */
+  .scroll-button:active {
+    background-color: rgba(0, 0, 0, 0.8);
+    transform: translateY(-50%) scale(1.1); /* Slight scaling effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adding shadow on active */
+  }
+  
+  
+  .caption {
+    font-family: 'Arial', sans-serif;
+    font-size: 3.5vw;
+    color: #333;
+    text-align: center;
+    margin: 30px auto;
+    max-width: 100vw;
+    padding: 20px;
+    background: linear-gradient(135deg, #00b0ff, #23d3c2); /* Ocean blue to green gradient */
+  
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .caption .highlight {
+    font-weight: bold;
+    color: #ffeb3b;
+    font-size: 3vw;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .caption:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #00b0ff, #009688); /* Ocean blue to green gradient */
+  
+  
+    transition: transform 0.3s ease;
+  }
+  .dashboard-content {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  .header-section {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .header-section h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+  }
+  
+  .header-section p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+  }
+  
+  .main-content {
+    display: flex;              /* Display the sections in a row */
+    flex-direction: column-reverse;        /* Align items horizontally */
+    justify-content: space-between; /* Space out the sections */
+    gap: 40px;                  /* Add space between the graph and details sections */
+    margin-top: 10vh;
+  }
+  
+  .graph-container {
+    flex: 1;                    /* Allow this section to grow and take space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .graph-placeholder {
+    width: 100%;
+    max-width: 400vh;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .graph-image {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .client-details {
+    flex: 1;                    /* Allow this section to grow and take space */
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .client-details h2 {
+    font-size: 8vw;
+    color: #34495e;
+  }
+  
+  .client-details p {
+    margin-bottom: 20px;
+    font-size: 4vw;
+
+    color: #2c3e50;
+  }
+  
+  .progress-metric {
+    margin-bottom: 20px;
+  }
+  
+  .progress-metric h3 {
+    font-size: 5vw;
+    color: #2980b9;
+  }
+  
+  .progress-metric p {
+    font-size: 3.6vw;
+
+  }
+  
+  .insights-container {
+    margin-top: 30px;
+  }
+  
+  .insights-container h3 {
+    font-size: 5vw;
+
+    color: #27ae60;
+  }
+  .insights-container p {
+    font-size: 3.7vw;
+
+  }
+  
+  .cta-container {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .cta-button {
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cta-button:hover {
+    background-color: #2980b9;
+  }
+  
+  
+  
+  .graph-image{
+    width: 80vw;
+    height: 80vw;
+
+  }
+  
+  
+  
+  
+  
+  
+  
+  
 }

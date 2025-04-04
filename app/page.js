@@ -1,103 +1,179 @@
+"use client";
 import Image from "next/image";
-
+import { Typewriter } from "react-simple-typewriter";
+import Card from "./card";
+import Pages from "./component/pages";
+import ArticleCard from "./component/pages";
+import { useState } from "react";
+import StatsSection from "./Counter";
+import HorizontalScroll from "./horzontal";
+import Dashboard from "./dashborad";
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [drawerOpen, setDrawerOpen] = useState(false); // State for the drawer visibility
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+
+  
+  const pages = [
+    { id: 1, posted: "Posted on September 25, 2024", title: "THE WOODS NEW EDITION", description: "Dive into the updated edition of 'The Woods' series, where we guide you step-by-step through the exciting features of Next.js. Whether you're a beginner or looking to level up your skills, this resource will help you master the fundamentals of Next.js development with hands-on examples and practical tips", image: "/wood.png", color: "#f0f0f0" },
+    { id: 2, posted: "September 25, 2024", title: "Another reason why you should grab The Woods", description: "Unlock the secrets behind 'The Woods' and discover why it’s a must-have in your web development toolkit. In this edition, we explore how mastering Next.js can take your design skills to the next level, providing you with tools to create stunning, performance-optimized websites", image: "/geensimple.webp", color: "#e0f7fa" },
+    { id: 3, posted: "September 25, 2024", title: "join us at the Frankfurt Book Fair on October 16th", description: "Exciting things are happening at the Frankfurt Book Fair this October! Join us as we showcase our expertise in React optimization. Whether you're a developer or a fan of cutting-edge technology, our presentation will provide key insights into making your React applications more efficient and scalable", image: "/woods.png", color: "#f0f0f0" },
+    { id: 1, posted: "Posted on September 25, 2024", title: "THE WOODS NEW EDITION", description: "Dive into the updated edition of 'The Woods' series, where we guide you step-by-step through the exciting features of Next.js. Whether you're a beginner or looking to level up your skills, this resource will help you master the fundamentals of Next.js development with hands-on examples and practical tips", image: "/wood.png", color: "#f0f0f0" },
+    { id: 2, posted: "September 25, 2024", title: "Another reason why you should grab The Woods", description: "Unlock the secrets behind 'The Woods' and discover why it’s a must-have in your web development toolkit. In this edition, we explore how mastering Next.js can take your design skills to the next level, providing you with tools to create stunning, performance-optimized websites", image: "/geensimple.webp", color: "#e0f7fa" },
+    { id: 3, posted: "September 25, 2024", title: "join us at the Frankfurt Book Fair on October 16th", description: "Exciting things are happening at the Frankfurt Book Fair this October! Join us as we showcase our expertise in React optimization. Whether you're a developer or a fan of cutting-edge technology, our presentation will provide key insights into making your React applications more efficient and scalable", image: "/woods.png", color: "#f0f0f0" },
+   
+  ]
+
+
+  const cards = [
+    {
+      category: "Full Body",
+      title: "ENERGY",
+      description: "Energy is everything and we work on yours. We work on your energy levels and reach higher state of your awareness.",
+      image: "/nature.jpg", // Replace with actual image path
+      color: "darkseagreen"
+    },
+    {
+      category: "Legs",
+      title: "Legs, Bums And Tums",
+      description: "This is a part that supports each aspect of your life and goes to the core of things. We work on how spiritual  and supports you in every aspect of your life.",
+      image: "/ocean.jpg", // Replace with actual image path
+      color: "lightblue" // Gold"
+    },
+    {
+      category: "Yoga",
+      title: "Active Yoga",
+      description: "Equally important in you personal and professional growth. Creativity is a matter of many different elements coming and working togethe.",
+      image: "/create.jpg", // Replace with actual image path
+      color: "gainsboro"
+    },
+    {
+      category: "Yoga",
+      title: "Active Yoga",
+      description: "Equally important in you personal and professional growth. Creativity is a matter of many different elements coming and working togethe.",
+      image: "/relation.png", // Replace with actual image path
+      color: "khaki"
+    }
+    
+  ];
+  const toggleDrawer = () => {
+    setDrawerOpen((prevState) => !prevState);
+  };
+
+  const closeDrawer = () => {
+    setDrawerOpen(false);
+  };
+
+
+
+  return (
+    <div className="wrapper">
+     <header className="navbar"> <div className="navbar-container">
+       <h1 className="navbar-title">Build Your Life with Mark</h1>
+        {/* Hamburger Menu Icon (Visible on mobile screens) */} 
+        <div className="hamburger-icon" onClick={toggleDrawer}> 
+          <div className="bar"></div> <div className="bar">
+            
+          </div>
+           <div className="bar"></div> 
+           </div> {/* Navbar Links for Desktop (default) */}
+            <nav className={`navbar-links ${drawerOpen ? "active" : ""}`}>
+               <a href="#about" className="navbar-link"> About </a> <a href="#services" className="navbar-link"> Services </a>
+                <a href="#contact" className="navbar-link"> Contact </a> </nav>
+                 </div> {/* Drawer Menu for Mobile (Initially hidden) */} <div className={`drawer ${drawerOpen ? "open" : ""}`}> 
+                  <nav className="navbar-links"> <a href="#about" className="navbar-link"> About </a> <a href="#services" className="navbar-link"> Services </a>
+                   <a href="#contact" className="navbar-link"> Contact </a>
+                    </nav> {/* Cancel Button to close the drawer */} <button className="cancel-btn" onClick={closeDrawer}> Close </button> </div> </header>
+      <div className="container">
+      {/* Header Section */}
+      <div className="header">
+      {/* Typing Effect for "MARK RELIC" */}
+      <h1 className="typing-effect">
+        <Typewriter
+          words={["My name is Mark, and I am a life coach."]}
+          loop={true} // Infinite loop
+          cursor
+          cursorStyle="_"
+          typeSpeed={150} // Speed of typing
+          deleteSpeed={50} // Speed of deleting
+          delaySpeed={1000} // Pause before restart
+        />
+      </h1>
+
+      {/* Image Section */}
+      <div className="image-container">
+        <Image
+          src="/mark.jpg"  // Update with the correct path
+          alt="Relaxation exercise"
+          width={500}
+          height={300}
+          className="main-image"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+          </div>
+      <div className="booking-section1">
+
+          <h2>Healing Minds Together</h2>
+          <p>Your Path To Mental Wellness</p>
+          <p>
+          Mark Relic is a writer, a novelist, English teacher and life coach. He is business, energy, creativity, relationship strategist. His talent is diverse, first starting in hospitality industry, venturing into teaching combined with coaching. Mark helps people achieving their goals and that he has been doing for over ten years. He lives his calling by serving and helping people reaching their goals and dreams.
+          </p>
           <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          src="/marksss.png"  // Update with the correct path
+          alt="Relaxation exercise"
+          width={150}
+          height={30}
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
+          
+          </div>
+      </div>
+
+      {/* Booking Section */}
+      <div>
+
+      <div className="booking-section">
+        <h3>Book Schedule</h3>
+        <p>Our training programs have received immense appreciation.</p>
+        <button className="button">Book Appointment</button>
+        <Image
+          src="/contact.gif"  // Update with the correct path
+          alt="Relaxation exercise"
+          width={150}
+          height={100}
           />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+
+      <div className="booking-section">
+        <h3>Book Schedule</h3>
+        <p>Our training programs have received immense appreciation.</p>
+        <button className="button">Book Appointment</button>
+        <Image id="hellomoto"
+          src="/calls.gif"  // Update with the correct path
+          alt="Relaxation exercise"
+          width={150}
+          height={150}
+          />
+      </div>
+      </div>
+    </div>
+    <StatsSection></StatsSection>
+
+
+      <div className="cardwrapper">
+  {cards.map((card, index) => (
+    <div key={index} className="card-container" style={{ backgroundColor: card.color }}>
+      <Card {...card} />
+    </div>
+  ))}
+</div>
+<h1 class="caption">
+Discover expert coaching insights, success stories, and tips to elevate your personal and professional growth. 
+  <span class="highlight">THE WOODS NEW EDITION.</span>
+</h1>
+
+
+
+    <HorizontalScroll articles={pages} />
+<Dashboard></Dashboard>
     </div>
   );
 }
+

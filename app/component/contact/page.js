@@ -10,9 +10,8 @@ export default function Contact() {
     message: "",
   });
 
-  const API_URL = process.env.NODE_ENV === 'production' 
-  ? 'https://your-backend.vercel.app/api/message' 
-  : 'http://localhost:4001/message';
+  const API_URL = 'https://my-mark-one.vercel.app/api/message';
+
 
 
   const [isSent, setIsSent] = useState(false);
@@ -20,29 +19,30 @@ export default function Contact() {
   const [error, setError] = useState("");
 
   // Handle form data change
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
-
+  
+    if (!formData.name || !formData.email || !formData.message) {
+      setError("All fields are required.");
+      setLoading(false);
+      return;
+    }
+  
     try {
       const response = await fetch(API_URL, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify(formData),
-});
-
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+  
       const data = await response.json();
-
+  
       if (!response.ok) {
         throw new Error(data.error || 'Failed to send message');
       }
-
+  
       setIsSent(true);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -52,7 +52,7 @@ export default function Contact() {
       setLoading(false);
     }
   };
-
+  
   return (
     <div>
 

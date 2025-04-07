@@ -153,12 +153,11 @@
   }
   
   .title {
-    font-size: 5.8vw;
+    font-size: 8vw;
   }
   
   .subtitle {
     font-size: 3.9vw;
-    max-width: 80vw;
     margin: 0 auto 4vh;
   }
   

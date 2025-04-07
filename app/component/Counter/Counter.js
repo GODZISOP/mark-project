@@ -1,12 +1,12 @@
 'use client';
-
+import styles from "./counter.module.css";
 import { useEffect, useState, useRef } from 'react';
-import { FaRunning, FaSmile, FaBriefcase } from 'react-icons/fa'; // Import icons from React Icons
+import { FaRunning, FaSmile, FaBriefcase } from 'react-icons/fa';
 
 const Counter = ({ end, title, subtitle, Icon }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -33,23 +33,28 @@ const Counter = ({ end, title, subtitle, Icon }) => {
   }, [end]);
 
   return (
-    <div ref={ref} className="counter-box">
-      <div className="counter-icon">
-        <Icon size={40} color="#00b0ff" /> {/* Display the icon */}
+    <div ref={ref} className={styles.counterBox}>
+      <div className={styles.counterIcon}>
+        <Icon className={styles.icon} />
       </div>
-      <h2 className="counter-number">{count}</h2>
-      <h3 className="counter-title">{title}</h3>
-      <p className="counter-subtitle">{subtitle}</p>
+      <h2 className={styles.counterNumber}>
+        {count}
+        {title === "Satisfaction Rate" && <span className={styles.percentSymbol}></span>}
+      </h2>
+      <h3 className={styles.counterTitle}>{title}</h3>
+      <p className={styles.counterSubtitle}>{subtitle}</p>
     </div>
   );
 };
 
 export default function StatsSection() {
   return (
-    <div className="stats-container">
-      <Counter end={999} title="Athletes Trained"  Icon={FaRunning} />
-      <Counter end={697} title="Satisfaction Rate"  Icon={FaSmile} />
-      <Counter end={160} title="Professional Experience" subtitle=" "Icon={FaBriefcase} />
-    </div>
+    <section className={styles.statsSection}>
+      <div className={styles.statsContainer}>
+        <Counter end={999} title="Athletes Trained" subtitle="and counting" Icon={FaRunning} />
+        <Counter end={697} title="Satisfaction Rate" subtitle="%" Icon={FaSmile} />
+        <Counter end={160} title="Professional Experience" subtitle="Years" Icon={FaBriefcase} />
+      </div>
+    </section>
   );
 }

@@ -1,0 +1,225 @@
+.statsSection {
+    padding: 6vh 0;
+  }
+  
+  .statsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 30vw;
+    margin: 0 0;
+    padding: 0 0vw;
+  }
+  
+  .counterBox {
+    width: 80vw;
+    border-radius: 1.5vh;
+    margin: 0;
+    margin:  0 0;
+    padding: 0 0;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: min(80vw, 25vh);
+    min-width: 10vh;
+  }
+  
+  .counterBox:hover {
+    transform: translateY(-0.5vh);
+    box-shadow: 0 0.8vh 3vh rgba(0, 0, 0, 0.12);
+    animation: pulse 1.5s infinite;
+  }
+  
+  .counterIcon {
+    margin-bottom: 2vh;
+  }
+  
+  .icon {
+    width: min(6vw, 8vh);
+    height: min(8vw, 8vh);
+    transition: transform 0.3s ease;
+    color: #00b0ff;
+  }
+  
+  .counterBox:hover .icon {
+    transform: scale(1.1);
+  }
+  
+  .counterNumber {
+    font-size: min(3vw, 3vh);
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 1vh 0;
+    line-height: 1;
+  }
+  
+  .percentSymbol {
+    font-size: min(3vw, 3vh);
+    color: #00b0ff;
+  }
+  
+  .counterTitle {
+    font-size: min(2.5vw, 2.5vh);
+    font-weight: 600;
+    color: #34495e;
+    margin: 1vh 0;
+  }
+  
+  .counterSubtitle {
+    font-size: min(2vw, 2vh);
+    color: #7f8c8d;
+    margin: 0;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 568px) {
+    .statsSection {
+      padding:6vh 20vw;
+    }
+    
+    .statsContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap:12vw;
+      margin: 0 20vw;
+    }
+    
+    .counterBox {
+      border-radius: 1.5vh;
+      margin: 0;
+      margin:  0 0;
+      padding: 0 0;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width:0vw;
+    }
+    
+    
+    .counterBox:hover {
+      transform: translateY(-0.5vh);
+      box-shadow: 0 0.8vh 3vh rgba(0, 0, 0, 0.12);
+      animation: pulse 1.5s infinite;
+    }
+    
+    .counterIcon {
+      margin-bottom:0vh;
+    }
+    
+    .icon {
+      width: min(6vw, 8vh);
+      height: min(8vw, 8vh);
+      transition: transform 0.3s ease;
+      color: #00b0ff;
+    }
+    
+    .counterBox:hover .icon {
+      transform: scale(1.1);
+    }
+    
+    .counterNumber {
+      font-size: 8vw;
+        font-weight: 700;
+        color: #2c3e50;
+        margin: 1vh 0;
+        line-height: 1;
+      }
+      
+      .percentSymbol {
+        font-size: min(3vw, 3vh);
+        color: #00b0ff;
+      }
+      
+      .counterTitle {
+        font-size: 4vw;
+        font-weight: 600;
+        color: #34495e;
+        margin: 1vh 0;
+      }
+      
+      .counterSubtitle {
+        font-size: 3vw;
+        color: #7f8c8d;
+        margin: 0;
+      }
+  }
+
+  @media (min-width: 600px) and (max-width: 1030px) {
+    
+    .statsSection {
+      margin-bottom: 0vh;
+      padding: 0vh 15vw;
+      margin-top: 5vh;
+    }
+    
+    .statsContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap:12vw;
+      margin: 0 15vw;
+    }
+    
+    .counterBox {
+        border-radius: 1.5vh;
+        margin: 0;
+        margin:  0 0;
+        padding: 0 0;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        width:0vw;
+      }
+     
+      
+      .counterBox:hover {
+        transform: translateY(-0.5vh);
+        box-shadow: 0 0.8vh 3vh rgba(0, 0, 0, 0.12);
+        animation: pulse 1.5s infinite;
+      }
+      
+      .counterIcon {
+        margin-bottom:0vh;
+      }
+      
+      .icon {
+        width: min(6vw, 8vh);
+        height: min(8vw, 8vh);
+        transition: transform 0.3s ease;
+        color: #00b0ff;
+      }
+      
+      .counterBox:hover .icon {
+        transform: scale(1.1);
+      }
+      
+      .counterNumber {
+        font-size: 4vw;
+        font-weight: 700;
+        color: #2c3e50;
+        margin: 1vh 0;
+        line-height: 1;
+      }
+      
+      .percentSymbol {
+        font-size: min(3vw, 3vh);
+        color: #00b0ff;
+      }
+      
+      .counterTitle {
+        font-size: 2vw;
+        font-weight: 600;
+        color: #34495e;
+        margin: 1vh 0;
+      }
+      
+      .counterSubtitle {
+        font-size: 2vw;
+        color: #7f8c8d;
+        margin: 0;
+      }
+  }

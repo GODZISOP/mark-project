@@ -1,0 +1,123 @@
+.aboutSection {
+  padding: 16vh 5vw;
+  background-color: #e8f4f8;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #e8f4f8, #d4e9f2);
+  min-height: 60vh;
+}
+
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: calc(2rem + 1.5vw);
+  color: #1a535c;
+  margin-bottom: 3vh;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.subtitle {
+  font-size: calc(1rem + 0.5vw);
+  color: #4a7c59;
+  margin-bottom: 5vh;
+  max-width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer {
+  flex: 1;
+  min-width: 30vw;
+  max-width: 40vw;
+}
+
+.image {
+  width: 100%;
+  border-radius: 1.5vh;
+  box-shadow: 0 1vh 3vh rgba(0, 0, 0, 0.1);
+  border: 0.5vw solid #fff;
+}
+
+.textContainer {
+  flex: 1;
+  min-width: 30vw;
+  max-width: 50vw;
+  text-align: left;
+}
+
+.text {
+  font-size: calc(0.9rem + 0.3vw);
+  line-height: 1.8;
+  color: #34495e;
+  margin-bottom: 2vh;
+}
+
+.highlight {
+  color: #3a86ff; /* Ocean blue */
+  font-weight: 600;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1.5vh 4vw;
+  background-color: #3a86ff;
+  color: white;
+  border-radius: 5vh;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 2vh;
+  font-size: calc(0.8rem + 0.4vw);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0.5vh 1vh rgba(58, 134, 255, 0.3);
+}
+
+.ctaButton:hover {
+  background-color: #2667cc;
+  transform: translateY(-0.3vh);
+  box-shadow: 0 1vh 2vh rgba(58, 134, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  
+  .textContainer {
+    text-align: center;
+    max-width: 70vw;
+  }
+  
+  .imageContainer {
+    max-width: 70vw;
+  }
+  
+  .ctaButton {
+    padding: 1.5vh 6vw;
+  }
+}
+
+@media (max-width: 568px) {
+  .imageContainer {
+  width: 120vw;
+  }
+
+  .image {
+    width: 100%;
+    border-radius: 1.5vh;
+    box-shadow: 0 1vh 3vh rgba(0, 0, 0, 0.1);
+    border: 0.5vw solid #fff;
+  }
+}

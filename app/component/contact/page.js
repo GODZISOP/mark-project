@@ -1,7 +1,8 @@
 "use client"; // This line ensures this component is rendered on the client side in Next.js
 import React, { useState } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa"; // Import social icons from react-icons
-import Navbar from "../navbar";
+import Navbar from "@/app/navbar";
+import Footer from "@/app/Footer/page";
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -126,6 +127,7 @@ export default function Contact() {
         </a>
       </div>
     </div>
-      </div>
+
+<Footer></Footer>      </div>
   );
 }

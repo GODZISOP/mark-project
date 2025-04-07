@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from "react-icons/fa"; // Import social icons from react-icons
 import Navbar from "@/app/navbar";
 import Footer from "@/app/Footer/page";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,37 +13,45 @@ export default function Contact() {
 
   const API_URL = 'https://my-mark-one.vercel.app/api/message';
 
-
-
   const [isSent, setIsSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   // Handle form data change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value, // Dynamically update the corresponding field
+    }));
+  };
+
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setError("");
-  
+
+    // Validate form
     if (!formData.name || !formData.email || !formData.message) {
       setError("All fields are required.");
       setLoading(false);
       return;
     }
-  
+
     try {
       const response = await fetch(API_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
-  
+
       const data = await response.json();
-  
+
       if (!response.ok) {
         throw new Error(data.error || 'Failed to send message');
       }
-  
+
       setIsSent(true);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -52,87 +61,87 @@ export default function Contact() {
       setLoading(false);
     }
   };
-  
+
   return (
     <div>
+      <Navbar />
+      <div className="contact-container">
+        <div className="contact-header">
+          <h2>Contact Us</h2>
+          <p>Get in touch with us via the form below.</p>
+        </div>
 
-      <Navbar></Navbar>
-    <div className="contact-container">
-      <div className="contact-header">
-        <h2>Contact Us</h2>
-        <p>Get in touch with us via the form below.</p>
-      </div>
-
-      <form className="contact-form" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange} // Handle input change
+              required
             />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange} // Handle input change
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange} // Handle input change
+              required
+            />
+          </div>
+
+          <button type="submit" className="submit-btn" disabled={loading}>
+            {loading ? "Sending..." : "Send Message"}
+          </button>
+        </form>
+
+        {isSent && (
+          <div className="confirmation-message">
+            <p>Thank you! Your message has been sent successfully.</p>
+          </div>
+        )}
+
+        {error && (
+          <div className="error-message">
+            <p>{error}</p>
+          </div>
+        )}
+
+        {/* Social Media Icons */}
+        <div className="social-icons">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+            <FaFacebook size={30} />
+          </a>
+          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
+            <FaTwitter size={30} />
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+            <FaInstagram size={30} />
+          </a>
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin size={30} />
+          </a>
         </div>
-
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="message">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-            ></textarea>
-        </div>
-
-        <button type="submit" className="submit-btn" disabled={loading}>
-          {loading ? "Sending..." : "Send Message"}
-        </button>
-      </form>
-
-      {isSent && (
-        <div className="confirmation-message">
-          <p>Thank you! Your message has been sent successfully.</p>
-        </div>
-      )}
-
-      {error && (
-        <div className="error-message">
-          <p>{error}</p>
-        </div>
-      )}
-
-      {/* Social Media Icons */}
-      <div className="social-icons">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-          <FaFacebook size={30} />
-        </a>
-        <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-          <FaTwitter size={30} />
-        </a>
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-          <FaInstagram size={30} />
-        </a>
-        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-          <FaLinkedin size={30} />
-        </a>
       </div>
-    </div>
 
-<Footer></Footer>      </div>
+      <Footer />
+    </div>
   );
 }

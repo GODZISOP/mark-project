@@ -27,7 +27,7 @@ export default function Contact() {
     setError("");
 
     try {
-      const response = await fetch("http://localhost:4001/message", { // Use the local backend URL directly
+      const response = await fetch("/pages/api/message", { // Use the Vercel serverless function
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

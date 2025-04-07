@@ -25,30 +25,32 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     setError("");
-
+  
     try {
-      const response = await fetch("/pages/api/message", { // Use the Vercel serverless function
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("/api/message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+  
+      // Ensure the response is valid JSON
       const data = await response.json();
-
+  
+      // Check if the response is successful
       if (!response.ok) {
-        throw new Error(data.error || 'Failed to send message');
+        throw new Error(data.error || "Failed to send message");
       }
-
+  
       setIsSent(true);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       setError(error.message);
-      console.error('Submission error:', error);
+      console.error("Submission error:", error);
     } finally {
       setLoading(false);
     }
   };
-
+  
   return (
     <div>
       <Navbar />

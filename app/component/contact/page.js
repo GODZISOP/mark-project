@@ -25,22 +25,21 @@ export default function Contact() {
     e.preventDefault();
     setLoading(true);
     setError("");
-  
+
     try {
-      const response = await fetch("/api/message", {
+      // Update the API URL to your deployed backend
+      const response = await fetch("https://my-mark-one.vercel.app/api/message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-  
-      // Ensure the response is valid JSON
+
       const data = await response.json();
-  
-      // Check if the response is successful
+
       if (!response.ok) {
         throw new Error(data.error || "Failed to send message");
       }
-  
+
       setIsSent(true);
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -50,7 +49,7 @@ export default function Contact() {
       setLoading(false);
     }
   };
-  
+
   return (
     <div>
       <Navbar />

@@ -118,9 +118,7 @@ export default function Contact() {
           <a href="https://www.facebook.com/marko.reljin.12?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
             <FaFacebook size={30} />
           </a>
-          <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
-            <FaTwitter size={30} />
-          </a>
+         
           <a href="  https://www.instagram.com/markrelic?igsh=ajh6M2VicHIwNG9o" target="_blank" rel="noopener noreferrer">
             <FaInstagram size={30} />
           </a>

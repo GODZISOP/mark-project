@@ -54,15 +54,7 @@ export default function Footer() {
               >
                 <FaFacebook />
               </a>
-              <a 
-                href="#" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                aria-label="Twitter"
-                className="social-icon twitter"
-              >
-                <FaTwitter />
-              </a>
+           
               <a 
                 href="https://www.instagram.com/markrelic?igsh=ajh6M2VicHIwNG9o" 
                 target="_blank" 

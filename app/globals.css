@@ -2158,6 +2158,64 @@ font-size:3vh;
     background-color: rgba(10, 102, 194, 0.2);
   }
   
+
+  .page-container {
+    max-width: 800px;
+    margin: 6vh auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title Styles */
+  .page-title {
+    font-size: 8vw;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Date Posted */
+  .page-posted {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+  }
+  
+  /* Image Styling */
+  .image-container {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .page-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Description Styles */
+  .page-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Page ID Styling */
+  .page-id {
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+  }
+  /* Wrapper for the horizontal scroll section */
+  
   
   
   

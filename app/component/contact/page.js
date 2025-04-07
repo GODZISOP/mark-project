@@ -11,19 +11,13 @@ export default function Contact() {
     message: "",
   });
 
-  const API_URL = 'https://my-mark-one.vercel.app/api/message';
-
   const [isSent, setIsSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
   // Handle form data change
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value, // Dynamically update the corresponding field
-    }));
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   // Handle form submission
@@ -32,15 +26,8 @@ export default function Contact() {
     setLoading(true);
     setError("");
 
-    // Validate form
-    if (!formData.name || !formData.email || !formData.message) {
-      setError("All fields are required.");
-      setLoading(false);
-      return;
-    }
-
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch("http://localhost:4001/message", { // Use the local backend URL directly
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -79,7 +66,7 @@ export default function Contact() {
               id="name"
               name="name"
               value={formData.name}
-              onChange={handleChange} // Handle input change
+              onChange={handleChange}
               required
             />
           </div>
@@ -91,7 +78,7 @@ export default function Contact() {
               id="email"
               name="email"
               value={formData.email}
-              onChange={handleChange} // Handle input change
+              onChange={handleChange}
               required
             />
           </div>
@@ -102,9 +89,9 @@ export default function Contact() {
               id="message"
               name="message"
               value={formData.message}
-              onChange={handleChange} // Handle input change
+              onChange={handleChange}
               required
-            />
+            ></textarea>
           </div>
 
           <button type="submit" className="submit-btn" disabled={loading}>

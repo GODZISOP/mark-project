@@ -1,6 +1,6 @@
 // components/Footer.js
 import { FaFacebook, FaTwitter, FaInstagram, FaEnvelope, FaLinkedin } from 'react-icons/fa';
-
+import Link from 'next/link';
 export default function Footer() {
   return (
     <footer className="footer">
@@ -13,7 +13,7 @@ export default function Footer() {
             <p>© {new Date().getFullYear()} All rights reserved</p>
             <p className="email-link">
               <FaEnvelope className="email-icon" /> 
-              <a href="mailto:contact@yourcompany.com">contact@yourcompany.com</a>
+              <a href="mailto:markoreljin5dva@gmail.com">markoreljin5dva@gmail.com</a>
             </p>
           </div>
 
@@ -21,11 +21,23 @@ export default function Footer() {
           <div className="footer-links">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Portfolio</a></li>
-              <li><a href="#">Contact</a></li>
+             
+              <li>
+              <Link href="/" className="navbar-link">
+            Home
+          </Link>
+                </li>
+              <li>
+              <Link href="component/heroos" className="navbar-link">
+       About
+          </Link>
+                </li>
+              <li>
+              <Link href="/component/contact" className="navbar-link">
+            Contact
+             </Link>
+                </li>
+           
             </ul>
           </div>
 
@@ -34,7 +46,7 @@ export default function Footer() {
             <h4>Connect With Us</h4>
             <div className="social-links">
               <a 
-                href="#" 
+                href="https://www.facebook.com/marko.reljin.12?mibextid=wwXIfr&mibextid=wwXIfr" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Facebook"
@@ -52,7 +64,7 @@ export default function Footer() {
                 <FaTwitter />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/markrelic?igsh=ajh6M2VicHIwNG9o" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Instagram"
@@ -61,7 +73,7 @@ export default function Footer() {
                 <FaInstagram />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/in/mark-relic-8731b62b4/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="LinkedIn"
@@ -74,7 +86,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>Designed and developed with ❤️ by Your Company</p>
+          <p>Designed and developed with ❤️ appointmentstudio@gmail.com</p>
         </div>
       </div>
     </footer>

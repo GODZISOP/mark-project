@@ -115,21 +115,21 @@ export default function Contact() {
 
         {/* Social Media Icons */}
         <div className="social-icons">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/marko.reljin.12?mibextid=wwXIfr&mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">
             <FaFacebook size={30} />
           </a>
           <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
             <FaTwitter size={30} />
           </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="  https://www.instagram.com/markrelic?igsh=ajh6M2VicHIwNG9o" target="_blank" rel="noopener noreferrer">
             <FaInstagram size={30} />
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/mark-relic-8731b62b4/" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={30} />
           </a>
         </div>
       </div>
-
+    
       <Footer />
     </div>
   );

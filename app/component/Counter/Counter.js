@@ -11,8 +11,8 @@ const Counter = ({ end, title, subtitle, Icon }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          let start = 100;
-          const duration = 2000;
+          let start = 1;
+          const duration = 10;
           const increment = end / (duration / 16);
           const timer = setInterval(() => {
             start += increment;
@@ -51,9 +51,9 @@ export default function StatsSection() {
   return (
     <section className={styles.statsSection}>
       <div className={styles.statsContainer}>
-        <Counter end={999} title="Athletes Trained" subtitle="and counting" Icon={FaRunning} />
-        <Counter end={697} title="Satisfaction Rate" subtitle="%" Icon={FaSmile} />
-        <Counter end={160} title="Professional Experience" subtitle="Years" Icon={FaBriefcase} />
+        <Counter end={78} title="" subtitle="working with" Icon={FaRunning} />
+        <Counter end={90} title="" subtitle="satisfaction rate" Icon={FaSmile} />
+        <Counter end={5} title="" subtitle="Experience" Icon={FaBriefcase} />
       </div>
     </section>
   );

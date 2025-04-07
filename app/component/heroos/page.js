@@ -1,5 +1,6 @@
 import Navbar from '@/app/navbar';
 import styles from './heroos.module.css';
+import Link from 'next/link';
 import Image from 'next/image';
 import Footer from '@/app/Footer/page';
 
@@ -37,7 +38,7 @@ export default function AboutSection() {
               What sets me apart is my unique blend of professional training and personal experience. I've walked the path of transformation myself and understand the challenges you may be facing. My clients describe me as <span className={styles.highlight}>compassionate, insightful, and results-driven</span>.
             </p>
             
-            <a href="#contact" className={styles.ctaButton}>Start Your Journey Today</a>
+            <Link href="/component/contact"  className={styles.ctaButton}>Start Your Journey Today</Link>
           </div>
         </div>
       </div>

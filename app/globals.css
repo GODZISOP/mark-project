@@ -1762,7 +1762,7 @@ font-size:3vh;
     font-family: 'Playfair Display', serif;
     font-weight: 700;
     color: #1b3d2c; /* Rich wood tone */
-    font-size: 8vw;
+    font-size: 10vw;
 
     letter-spacing: -0.5px;
     margin-top: 1rem;
@@ -2171,6 +2171,7 @@ font-size:3vh;
   /* Title Styles */
   .page-title {
     font-size: 8vw;
+    margin-top: 2vh;
     font-weight: bold;
     color: #333;
     margin-bottom: 20px;

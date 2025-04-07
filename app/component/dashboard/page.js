@@ -55,7 +55,14 @@ const Dashboard = () => {
 
           {/* Call to Action */}
           <div className={styles.ctaContainer}>
-            <button className={styles.ctaButton}>Schedule a Session</button>
+          <a 
+  href="https://calendly.com/markoreljin5dva/30min" 
+  target="_blank" 
+  rel="noopener noreferrer"
+  className={styles.ctaButton}
+>
+  Schedule a Session
+</a>
           </div>
         </div>
 

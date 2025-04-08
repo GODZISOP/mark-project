@@ -12,8 +12,8 @@ const Counter = ({ end, title, subtitle, Icon }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           let start = 1;
-          const duration = 10;
-          const increment = end / (duration / 16);
+          const duration = 2000; // Increased duration to make the counter slower
+          const increment = end / (duration / 16); // Increment based on new duration
           const timer = setInterval(() => {
             start += increment;
             if (start >= end) {

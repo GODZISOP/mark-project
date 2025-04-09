@@ -28,7 +28,7 @@ export default function Footer() {
           </Link>
                 </li>
               <li>
-              <Link href="component/heroos" className="navbar-link">
+              <Link href="/component/heroos" className="navbar-link">
        About
           </Link>
                 </li>

@@ -28,7 +28,7 @@ export default function Contact() {
 
     try {
       // Update the API URL to your deployed backend
-      const response = await fetch("https://my-mark-g6fj.vercel.app/message", {
+      const response = await fetch("https://my-mark-g6fj-gkh040d6x-godzisops-projects.vercel.app/message", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

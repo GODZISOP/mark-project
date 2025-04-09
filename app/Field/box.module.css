@@ -1,0 +1,135 @@
+/* Blog Section - Hero Style with Premium Background Effects */
+.blogSection {
+  /* Layout & Positioning */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Ensures full viewport coverage */
+  padding: 50px 0;
+  overflow: hidden; /* Prevents scroll glitches */
+  
+  /* **Enhanced Background Styling** */
+  background-image: url('/nature.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax effect on scroll */
+  background-blend-mode: overlay; /* Blends with overlay for richer contrast */
+  
+  /* Text Styling */
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Improves readability */
+}
+
+/* **Dynamic Gradient Overlay for Depth** */
+.blogSection .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg, 
+    rgba(0, 0, 0, 0.7) 0%, 
+    rgba(0, 40, 80, 0.5) 100%
+  ); /* Gradient for visual interest */
+  z-index: 1;
+  opacity: 0.8;
+  transition: opacity 0.5s ease;
+}
+
+.blogSection:hover .overlay {
+  opacity: 0.9; /* Darkens on hover for focus */
+}
+
+/* Main Content Container with Smooth Entrance Animation */
+.blogContent {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  padding: 30px;
+  border-radius: 10px; /* Soft container edges */
+  backdrop-filter: blur(5px); /* Frosted glass effect */
+  animation: fadeInUp 1s ease-out; /* Subtle entrance animation */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* **Enhanced Typography for Impact** */
+.blogContent h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.blogContent p {
+  font-size: 1.25rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* **Premium CTA Button with Glow Effect** */
+.readMoreBtn {
+  display: inline-block;
+  background-color: #ff6f61;
+  color: white;
+  padding: 14px 28px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 111, 97, 0.4);
+}
+
+.readMoreBtn:hover {
+  background-color: #ff5345;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 111, 97, 0.6);
+}
+
+.readMoreBtn:active {
+  transform: translateY(1px);
+}
+
+/* **Responsive Adjustments** */
+@media (max-width: 768px) {
+  .blogContent {
+    padding: 25px;
+    max-width: 90%;
+    backdrop-filter: blur(2px); /* Less blur on small screens */
+  }
+  
+  .blogContent h2 {
+    font-size: 2.2rem;
+  }
+  
+  .blogContent p {
+    font-size: 1.1rem;
+  }
+  
+  .readMoreBtn {
+    padding: 12px 24px;
+  }
+}
+
+/* **Hidden Image Fallback** */
+.blogImage img {
+  display: none;
+}

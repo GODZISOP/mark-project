@@ -11,7 +11,7 @@ export default function AboutSection() {
 
     <section className={styles.aboutSection} id="about">
       <div className={styles.container}>
-        <h2 className={styles.title}>About MarK Relic</h2>
+        <h2 className={styles.title}>About Mark Relic</h2>
         <p className={styles.subtitle}>Empowering you to unlock your full potential and live your best life</p>
         
         <div className={styles.content}>

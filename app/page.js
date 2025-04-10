@@ -50,7 +50,7 @@ export default function Home() {
       description: "Equally important in you personal and professional growth. Creativity is a matter of many different elements coming and working together. Being creative means being your own master of creating things and developing your life and business",
     },
     {
-      title: "REALATIONSHIP",
+      title: "RELATIONSHIP",
       description: " We crack the code of what they mean to you based on where you are in your life. We tackle what your relationship goals are and why. By doing so, you gain a different picture of where you are and what you will do.",
       image: "/relation.png", // Replace with actual image path
       color: "khaki"

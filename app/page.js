@@ -46,7 +46,7 @@ export default function Home() {
     {
       image: "/ocean.jpg", // Replace with actual image path
       color: "lightblue", // Gold"
-      title: "Active Yoga",
+      title: "CREATIVITY",
       description: "Equally important in you personal and professional growth. Creativity is a matter of many different elements coming and working together. Being creative means being your own master of creating things and developing your life and business",
     },
     {

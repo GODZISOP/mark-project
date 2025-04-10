@@ -27,7 +27,7 @@ export default function AboutSection() {
           
           <div className={styles.textContainer}>
             <p className={styles.text}>
-              Hi, I'm <span className={styles.highlight}>Mar Relic</span>, a certified life coach with over 10 years of experience helping individuals transform their lives. My journey began when I discovered my passion for helping others overcome obstacles and achieve their dreams.
+              Hi, I'm <span className={styles.highlight}>Mark Relic</span>, a certified life coach with over 10 years of experience helping individuals transform their lives. My journey began when I discovered my passion for helping others overcome obstacles and achieve their dreams.
             </p>
             
             <p className={styles.text}>

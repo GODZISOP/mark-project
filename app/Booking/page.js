@@ -73,7 +73,7 @@ export default function Booking() {
       <div data-aos="fade-up" data-aos-delay="400">
         <div className="booking-section">
           <h3>Book Schedule</h3>
-          <p>Our training programs have received immense appreciation.</p>
+          <p>Our training programs have received immense appreciation..</p>
           <a
             href="https://calendly.com/markoreljin5dva/30min"
             target="_blank"

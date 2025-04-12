@@ -94,7 +94,7 @@ export default function Home() {
 <h1 class="caption" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
   Discover expert coaching insights, success stories, and tips to elevate your personal and professional growth. 
   <span class="highlight" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
-    THE WOODS NEW EDITION.
+    THE WOODS NEW EDITION..
   </span>
 </h1>
 

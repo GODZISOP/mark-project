@@ -30,14 +30,22 @@ export default function RootLayout({ children }) {
       AOS.refresh();  // Refresh AOS on scroll to trigger animations again
     };
 
+    // Throttling the scroll event to improve performance
+    let timeoutId;
+    const throttledScrollHandler = () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(handleScroll, 100); // Delay refresh to improve performance
+    };
+
     // Add event listener to trigger AOS refresh on scroll
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', throttledScrollHandler);
 
     // Cleanup event listener on unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', throttledScrollHandler);
+      clearTimeout(timeoutId); // Clear the timeout on unmount
     };
-  }, []);
+  }, []);  // Empty dependency array ensures this runs only on mount
 
   return (
     <html lang="en">

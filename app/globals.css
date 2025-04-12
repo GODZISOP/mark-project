@@ -8,20 +8,61 @@ html, body {
   width: 100%;
   max-width: 100%;
   margin: 0;
+  scroll-behavior: smooth;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   padding: 0;
-  overflow-x: hidden; /* Prevents horizontal scrolling */
+  overflow-x: hidden; /* Prevents horizo
+  ntal scrolling */
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s ease-in-out;
+  scroll-padding-top: 80px;
   position: relative; /* Helps contain absolutely positioned elements */
 }
-
+/* Apply will-change for optimized elements */
 /* Add this to remove default browser spacing */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
+/* Tabs container */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #ddd;
+}
+
+.tab {
+  padding: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;  /* Smooth transition for tabs */
+}
+
+.tab.active {
+  color: #3498db;
+  border-bottom: 2px solid #3498db;
+  transform: scale(1.1);  /* Slight scale to emphasize active tab */
+}
+
+/* Tab content transition */
+.tab-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.tab-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
 
